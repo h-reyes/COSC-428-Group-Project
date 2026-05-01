@@ -86,7 +86,6 @@ def test_algorithms(size):
     arr = [random.randint(1, 10000) for _ in range(size)]
 
     print("\n==============================")
-    print("Input Size:", size)
     print("Random Numbers Chosen:", arr)
 
     start = time.perf_counter()
@@ -99,6 +98,7 @@ def test_algorithms(size):
 
     print("Sorted by Merge Sort:", merge_sorted)
     print("Sorted by Heap Sort: ", heap_sorted)
+    print("Input Size:", size)
     print("Merge Sort Time:", round(merge_time * 1000, 2), "ms")
     print("Heap Sort Time: ", round(heap_time * 1000, 2), "ms")
 

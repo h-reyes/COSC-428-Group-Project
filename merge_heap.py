@@ -70,7 +70,12 @@ def heap_sort(arr):
 
 
 # Small test
-arr = [38, 27, 43, 3, 9, 82, 10]
+try:
+    with open('input.txt', 'r') as f:
+        arr = [int(x) for x in f.read().split()]
+except FileNotFoundError:
+    print("input.txt not found, using default array")
+    arr = [38, 27, 43, 3, 9, 82, 10]
 
 print("Original:", arr)
 print("Merge Sort:", merge_sort(arr.copy()))
@@ -86,7 +91,9 @@ def test_algorithms(size):
     arr = [random.randint(1, 10000) for _ in range(size)]
 
     print("\n==============================")
-    print("Random Numbers Chosen:", arr)
+    with open('random_array.txt', 'w') as f:
+        f.write(' '.join(map(str, arr)) + '\n')
+    print("Random Numbers Chosen: written to random_array.txt")
 
     start = time.perf_counter()
     merge_sorted = merge_sort(arr.copy())

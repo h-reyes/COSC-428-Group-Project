@@ -91,9 +91,9 @@ def test_algorithms(size):
     arr = [random.randint(1, 10000) for _ in range(size)]
 
     print("\n==============================")
-    with open('random_array.txt', 'w') as f:
+    with open('input.txt', 'w') as f:
         f.write(' '.join(map(str, arr)) + '\n')
-    print("Random Numbers Chosen: written to random_array.txt")
+    print("Random Numbers Chosen: written to input.txt")
 
     start = time.perf_counter()
     merge_sorted = merge_sort(arr.copy())
